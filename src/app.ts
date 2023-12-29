@@ -23,6 +23,6 @@ app.use(
   })
 );
 // remove this middleware in production
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 app.use("/api/v1", appRouter);
 export default app;

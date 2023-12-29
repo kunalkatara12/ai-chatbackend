@@ -1,6 +1,6 @@
-import e, { NextFunction, Request, Response } from "express";
+import  { NextFunction, Request, Response } from "express";
 import User from "../models/User.models";
-import bcrypt, { hash, compare } from "bcrypt";
+import  { hash, compare } from "bcrypt";
 import { createToken } from "../utils/token-manager.utils";
 import { COOKIE_NAME } from "../utils/constant.utils";
 export const getAllUsers = async (

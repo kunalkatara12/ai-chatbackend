@@ -24,7 +24,7 @@ app.use((0, cors_1.default)({
     credentials: true,
 }));
 // remove this middleware in production
-app.use((0, morgan_1.default)("dev"));
+// app.use((0, morgan_1.default)("dev"));
 app.use("/api/v1", index_1.default);
 exports.default = app;
 //# sourceMappingURL=app.js.map

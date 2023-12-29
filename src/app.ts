@@ -13,7 +13,10 @@ app.use(cookieParser(process.env.COOKIE_SECRET as string));
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
+      // "http://localhost:5173",
+      "https://ai-chat-frontend.vercel.app/",
+      "https://ai-chat-frontend-git-master-kunalkatara12.vercel.app/",
+      "https://ai-chat-frontend-caukke0nc-kunalkatara12.vercel.app/",
       "https://glittering-babka-72d1cb.netlify.app/",
     ],
     credentials: true,

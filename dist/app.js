@@ -16,11 +16,14 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)(process.env.COOKIE_SECRET));
 app.use((0, cors_1.default)({
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://glittering-babka-72d1cb.netlify.app/",
+    ],
     credentials: true,
 }));
 // remove this middleware in production
 app.use((0, morgan_1.default)("dev"));
-app.use('/api/v1', index_1.default);
+app.use("/api/v1", index_1.default);
 exports.default = app;
 //# sourceMappingURL=app.js.map

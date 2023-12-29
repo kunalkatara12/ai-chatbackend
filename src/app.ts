@@ -19,6 +19,8 @@ app.use(
       "https://ai-chat-frontend-caukke0nc-kunalkatara12.vercel.app/",
       "https://glittering-babka-72d1cb.netlify.app/",
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );

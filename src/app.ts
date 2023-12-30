@@ -21,7 +21,7 @@ app.use(
       // "https://glittering-babka-72d1cb.netlify.app/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    // allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );

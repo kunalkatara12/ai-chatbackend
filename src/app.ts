@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       // "*",
-      "https://calm-khapse-f64d9a.netlify.app/",
+      "https://calm-khapse-f64d9a.netlify.app",
       // "https://ai-chat-frontend.vercel.app/",
       // "https://ai-chat-frontend-git-master-kunalkatara12.vercel.app/",
       // "https://ai-chat-frontend-caukke0nc-kunalkatara12.vercel.app/",

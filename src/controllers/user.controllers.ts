@@ -60,8 +60,7 @@ export const userSignup = async (
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -72,8 +71,7 @@ export const userSignup = async (
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
@@ -122,8 +120,7 @@ export const userLogin = async (
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -134,8 +131,7 @@ export const userLogin = async (
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
@@ -210,8 +206,7 @@ export const userLogout = async (
     // clear cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -269,8 +264,7 @@ export const changePassword = async (
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -281,8 +275,7 @@ export const changePassword = async (
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
@@ -331,8 +324,7 @@ export const userSignupGoogle = async (
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -343,8 +335,7 @@ export const userSignupGoogle = async (
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
@@ -388,8 +379,7 @@ export const userLoginGoogle = async (
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
     });
@@ -400,8 +390,7 @@ export const userLoginGoogle = async (
     const token = createToken(exUser._id.toString(), exUser.email, "7d");
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "ai-chatbackend.onrender.com",
-      // domain: "calm-khapse-f64d9a.netlify.app",
+      domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,

@@ -1,6 +1,6 @@
-import  { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import User from "../models/User.models";
-import  { hash, compare } from "bcrypt";
+import { hash, compare } from "bcrypt";
 import { createToken } from "../utils/token-manager.utils";
 import { COOKIE_NAME } from "../utils/constant.utils";
 export const getAllUsers = async (
@@ -59,10 +59,12 @@ export const userSignup = async (
 
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     // expire date
     const expires = new Date();
@@ -70,11 +72,13 @@ export const userSignup = async (
     //create token
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
       // sameSite:"lax",
       // secure:process.env.NODE_ENV==="production"?true:false
     });
@@ -119,10 +123,12 @@ export const userLogin = async (
 
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     // expire date
     const expires = new Date();
@@ -130,11 +136,13 @@ export const userLogin = async (
     //create token
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
       // sameSite:"lax",
       // secure:process.env.NODE_ENV==="production"?true:false
     });
@@ -205,10 +213,12 @@ export const userLogout = async (
     }
     // clear cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     //  console.log(user._id.toString(),res.locals.jwtData.id)
     return res.status(200).json({
@@ -263,10 +273,12 @@ export const changePassword = async (
 
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     // expire date
     const expires = new Date();
@@ -274,11 +286,13 @@ export const changePassword = async (
     //create token
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
       // sameSite:"lax",
       // secure:process.env.NODE_ENV==="production"?true:false
     });
@@ -313,20 +327,21 @@ export const userSignupGoogle = async (
         message: "User is already registered",
       });
 
-     
     //saving user
     const user = await new User({
       name,
       email,
-      isGoogleAccount:true,
+      isGoogleAccount: true,
     }).save();
 
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     // expire date
     const expires = new Date();
@@ -334,11 +349,13 @@ export const userSignupGoogle = async (
     //create token
     const token = createToken(user._id.toString(), user.email, "7d");
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
       // sameSite:"lax",
       // secure:process.env.NODE_ENV==="production"?true:false
     });
@@ -348,7 +365,7 @@ export const userSignupGoogle = async (
       // id: user._id.toString(),
       name: user.name,
       email: user.email,
-      isGoogleAccount:true
+      isGoogleAccount: true,
     });
   } catch (error: any) {
     console.log(error);
@@ -375,13 +392,15 @@ export const userLoginGoogle = async (
         message: "User is not registered",
       });
     }
-  
+
     // clear previous cookies
     res.clearCookie(COOKIE_NAME, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
     });
     // expire date
     const expires = new Date();
@@ -389,11 +408,13 @@ export const userLoginGoogle = async (
     //create token
     const token = createToken(exUser._id.toString(), exUser.email, "7d");
     res.cookie(COOKIE_NAME, token, {
-      path: "/",
+      // path: "/",
       // domain: "calm-khapse-f64d9a.netlify.app",
       expires,
       httpOnly: true,
       signed: true,
+      sameSite: "none",
+      secure: true,
       // sameSite:"lax",
       // secure:process.env.NODE_ENV==="production"?true:false
     });

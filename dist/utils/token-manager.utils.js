@@ -32,6 +32,7 @@ const createToken = (id, email, expiresIn) => {
         email,
     };
     const token = (0, jsonwebtoken_1.sign)(payload, process.env.JWT_SECRET, { expiresIn });
+    // console.log(token)
     return token;
 };
 exports.createToken = createToken;

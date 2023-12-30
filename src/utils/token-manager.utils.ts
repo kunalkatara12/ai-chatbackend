@@ -12,7 +12,7 @@ export const createToken = (
     email,
   };
   const token = sign(payload, process.env.JWT_SECRET as string, { expiresIn });
-  console.log(token)
+  // console.log(token)
   return token;
 };
 
@@ -22,7 +22,7 @@ export const verifyToken = async (
   next: NextFunction
 ) => {
   const token = req.signedCookies[`${COOKIE_NAME}`];
-  console.log(token)
+  // console.log(token)
   if (!token || token.trim() === "") {
     return res.status(401).json({
       message: "Token not recieved in token-manager.utils.ts",

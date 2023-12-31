@@ -1,6 +1,6 @@
 import express, { Express } from "express";
 import { config } from "dotenv";
-import morgan from "morgan";
+// import morgan from "morgan";
 import appRouter from "./routes/index";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://merngpt-gemini.netlify.app",
+      "https://gemini-gpt.netlify.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     // allowedHeaders: ["Content-Type", "Authorization"],

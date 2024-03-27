@@ -13,7 +13,6 @@ export const generateChatCompletion = async (
   res: Response,
   next: NextFunction
 ) => {
-  // Assuming req is of type Express.Request
   // message from user
   const { message } = req.body;
   try {
@@ -52,6 +51,7 @@ export const generateChatCompletion = async (
     });
   }
 };
+
 export const allChats = async (
   req: Request,
   res: Response,

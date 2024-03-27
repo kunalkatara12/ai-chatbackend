@@ -50,6 +50,7 @@ export const userSignup = async (
 
     //hashing password
     const hashedPassword = await hash(password, 10);
+
     //saving user
     const user = await new User({
       name,
@@ -66,6 +67,7 @@ export const userSignup = async (
       sameSite: "none",
       secure: true,
     });
+    
     // expire date
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
@@ -97,6 +99,7 @@ export const userSignup = async (
     });
   }
 };
+
 
 export const userLogin = async (
   req: Request,
@@ -161,6 +164,7 @@ export const userLogin = async (
     });
   }
 };
+
 export const verifyUser = async (
   req: Request,
   res: Response,
@@ -194,6 +198,7 @@ export const verifyUser = async (
     });
   }
 };
+
 export const userLogout = async (
   req: Request,
   res: Response,
